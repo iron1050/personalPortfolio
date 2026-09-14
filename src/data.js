@@ -38,6 +38,10 @@ export const projects = [
     title: 'Student Dashboard Redesign',
     category: 'Truth Bridge · React',
     year: '2025',
+    role: 'Web Development Intern',
+    description:
+      'Part of a major redesign of the Truth Bridge website. I built and tested reusable React UI components for the student dashboard, tightening the interaction model and making the section faster to extend.',
+    link: null, // e.g. 'https://truthbridge.org'
     tags: ['React', 'Reusable UI', 'Testing'],
     gradient: 'linear-gradient(135deg, #c8ff3d 0%, #1f2a08 60%, #0b0b0c 100%)',
     href: '#',
@@ -46,6 +50,10 @@ export const projects = [
     title: 'College Matching Platform',
     category: 'Truth Bridge · Figma to code',
     year: '2025',
+    role: 'Web Development Intern',
+    description:
+      'Designed and prototyped new user-facing features for a college matching platform, translating Figma designs into responsive, interactive React.js components.',
+    link: null,
     tags: ['React.js', 'Figma', 'Responsive'],
     gradient: 'linear-gradient(135deg, #6a5cff 0%, #1a1650 55%, #0b0b0c 100%)',
     href: '#',
@@ -54,6 +62,10 @@ export const projects = [
     title: 'DOE Document System Research',
     category: 'NYC DOE · Project scoping',
     year: '2024',
+    role: 'Project Scope Researcher',
+    description:
+      'Researched requirements for a new document management system serving over a million NYC DOE users. Synthesised findings into a presentation for key stakeholders that directly shaped the final feature prioritisation.',
+    link: null,
     tags: ['Research', 'Stakeholder decks', '1M+ users'],
     gradient: 'linear-gradient(135deg, #ff7a3d 0%, #4a1f0b 55%, #0b0b0c 100%)',
     href: '#',
@@ -62,6 +74,10 @@ export const projects = [
     title: 'This Portfolio',
     category: 'Personal · WebGL + motion',
     year: '2026',
+    role: 'Design & build',
+    description:
+      'The site you are on. Vite + React, GSAP for every transition, Lenis smooth scroll and a single Three.js shader blob, all driven by one animation loop so it runs at native refresh rate.',
+    link: null, // set to the deployed URL once it is live
     tags: ['React', 'GSAP', 'Three.js'],
     gradient: 'linear-gradient(135deg, #3de0ff 0%, #0b3a45 55%, #0b0b0c 100%)',
     href: '#top',

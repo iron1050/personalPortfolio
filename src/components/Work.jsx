@@ -1,6 +1,7 @@
-import { useRef } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { gsap, useGSAP, isTouch } from '../lib/gsap'
 import { projects } from '../data'
+import ProjectModal from './ProjectModal'
 
 function Arrow() {
   return (
@@ -12,11 +13,14 @@ function Arrow() {
 
 /**
  * Project list. Hovering a row shows a floating preview that trails the
- * pointer (quickTo) and tilts with horizontal velocity.
+ * pointer (quickTo) and tilts with horizontal velocity. Clicking a row
+ * opens the detail modal.
  */
 export default function Work() {
   const root = useRef(null)
   const preview = useRef(null)
+  const [active, setActive] = useState(null)
+  const close = useCallback(() => setActive(null), [])
 
   useGSAP(
     () => {
@@ -74,6 +78,13 @@ export default function Work() {
     { scope: root },
   )
 
+  const openProject = (e, i) => {
+    e.preventDefault()
+    // hide the hover preview so it doesn't sit under the modal
+    if (preview.current) gsap.to(preview.current, { scale: 0.6, opacity: 0, duration: 0.3 })
+    setActive(projects[i])
+  }
+
   return (
     <section className="work" id="work" ref={root}>
       <div className="container">
@@ -85,7 +96,14 @@ export default function Work() {
         <ul className="work__list">
           {projects.map((pr, i) => (
             <li key={pr.title}>
-              <a className="work__row" href={pr.href} data-index={i} data-cursor="view" data-cursor-label="Open">
+              <a
+                className="work__row"
+                href={pr.link || '#'}
+                data-index={i}
+                data-cursor="view"
+                data-cursor-label="Open"
+                onClick={(e) => openProject(e, i)}
+              >
                 <span className="work__idx mono">{String(i + 1).padStart(2, '0')}</span>
                 <div>
                   <div className="work__title">{pr.title}</div>
@@ -114,6 +132,8 @@ export default function Work() {
           />
         ))}
       </div>
+
+      <ProjectModal project={active} onClose={close} />
     </section>
   )
 }

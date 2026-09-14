@@ -39,18 +39,20 @@ export default function Cursor() {
         dy(e.clientY)
       }
 
+      let current = 'default'
       const setState = (state) => {
+        current = state
         const r = ring.current
         const l = label.current
         switch (state) {
           case 'hover':
-            gsap.to(r, { scale: 1.6, backgroundColor: 'rgba(255,255,255,0)', duration: 0.4 })
+            gsap.to(r, { scale: 1.5, backgroundColor: 'rgba(255,255,255,0)', duration: 0.4 })
             gsap.to(l, { opacity: 0, scale: 0.5, duration: 0.2 })
             gsap.to(dot.current, { scale: 0, duration: 0.3 })
             break
           case 'view':
-            gsap.to(r, { scale: 2.4, backgroundColor: 'rgba(255,255,255,1)', duration: 0.4 })
-            gsap.to(l, { opacity: 1, scale: 0.42, duration: 0.3 })
+            gsap.to(r, { scale: 2.5, backgroundColor: 'rgba(255,255,255,1)', duration: 0.4 })
+            gsap.to(l, { opacity: 1, scale: 0.4, duration: 0.3 })
             gsap.to(dot.current, { scale: 0, duration: 0.3 })
             break
           case 'hide':
@@ -79,7 +81,7 @@ export default function Cursor() {
         setState('default')
       }
       const onDown = () => gsap.to(ring.current, { scale: 0.8, duration: 0.15 })
-      const onUp = () => gsap.to(ring.current, { scale: 1, duration: 0.3 })
+      const onUp = () => setState(current)
       const onLeave = () => gsap.to(root.current, { opacity: 0, duration: 0.3 })
       const onEnter = () => gsap.to(root.current, { opacity: 1, duration: 0.3 })
 
