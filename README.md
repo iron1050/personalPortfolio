@@ -1,5 +1,5 @@
 # Personal Portfolio
-
+Note **this was made entirely with claude fable 5.1**
 Dark, editorial single-page portfolio built with **Vite + React**, **GSAP** (ScrollTrigger, SplitText, ScrambleText), **Lenis** smooth scroll and a small **Three.js** shader scene.
 
 ## Run
