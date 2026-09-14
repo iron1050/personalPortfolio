@@ -60,7 +60,7 @@ export default function Hero({ ready }) {
       <div className="hero__inner container">
         <div className="hero__eyebrow mono" style={{ opacity: ready ? undefined : 0 }}>
           <span className="dot" />
-          <span>{profile.available ? 'Available for work' : 'Currently booked'}</span>
+          <span>{profile.available ? profile.availableLabel : 'Currently booked'}</span>
           <span>—</span>
           <span>{profile.role}</span>
         </div>
@@ -73,8 +73,7 @@ export default function Hero({ ready }) {
 
         <div className="hero__row" style={{ opacity: ready ? undefined : 0 }}>
           <p className="hero__sub">
-            <b>{profile.tagline}</b> Specialising in React, WebGL and motion — shipping products
-            that feel as good as they look.
+            <b>{profile.tagline}</b> {profile.taglineSub}
           </p>
           <div className="hero__scroll mono">
             <span>Scroll</span>

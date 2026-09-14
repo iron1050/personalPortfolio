@@ -87,16 +87,16 @@ export default function Contact() {
               Location
             </div>
             <p style={{ color: 'var(--fg)' }}>{profile.location}</p>
-            <p>Working worldwide, remote-first.</p>
+            <p>Stony Brook University · Class of 2029</p>
           </div>
           <div>
             <div className="mono" style={{ marginBottom: 12 }}>
               Status
             </div>
             <p style={{ color: 'var(--fg)' }}>
-              {profile.available ? 'Open to new projects' : 'Currently booked'}
+              {profile.available ? profile.availableLabel : 'Currently booked'}
             </p>
-            <p>Freelance · Full-time</p>
+            <p>Software engineering · Frontend</p>
           </div>
         </div>
 

@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { gsap, ScrollTrigger, useGSAP } from '../lib/gsap'
 
-const items = ['React', 'Three.js', 'GSAP', 'WebGL', 'TypeScript', 'Motion']
+const items = ['React', 'Java', 'Python', 'GSAP', 'Three.js', 'Figma']
 
 function Star() {
   return (
